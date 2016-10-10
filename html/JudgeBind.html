@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+	<title>评委身份验证</title>
+	<link rel="stylesheet" type="text/css" href="/static/css/style.css">
+</head>
+<body>
+	<h1 class="title">第X届教职工歌唱比赛</h1>
+	<form name="checkid" action="" id="checkid">
+		<input type="text" name="check-code" placeholder="请输入手中的验证码" id="check-code">
+		<p class="error" id="check-error">验证码错误</p>
+		<input type="hidden" name="openId" value="">
+		<button class="submitButton" id="checkIdSubmit" disabled="disabled">确认</button>
+	</form>
+	<img src="/static/img/portrait.jpg" alt="" id="intr-img">
+	<script type="text/javascript" src="/static/js/funciotn.js"></script>
+	<script type="text/javascript" src="/static/js/checkid.js"></script>
+</body>
+</html>

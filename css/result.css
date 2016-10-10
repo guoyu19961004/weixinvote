@@ -1,0 +1,172 @@
+/* line 5, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../Program Files/Ruby23-x64/lib/ruby/gems/2.3.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 3, ../sass/result.scss */
+html {
+  width: 100%;
+  height: 100%;
+  font-family: "STHeiti Light", sans-serif;
+}
+
+/* line 9, ../sass/result.scss */
+body {
+  position: relative;
+  min-width: 960px;
+  height: 100%;
+  font-size: 0;
+}
+
+/* line 15, ../sass/result.scss */
+h1 {
+  font-size: 50px;
+  text-align: center;
+  padding-top: 50px;
+  -moz-transition: all 1s ease-in-out 0s;
+  -o-transition: all 1s ease-in-out 0s;
+  -webkit-transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition: all 1s ease-in-out 0s;
+}
+
+/* line 21, ../sass/result.scss */
+.wrap {
+  position: absolute;
+  left: 0;
+  bottom: 20%;
+  width: 100%;
+  padding-top: 50px;
+}
+
+/* line 28, ../sass/result.scss */
+.showList {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  -moz-transition: opacity 1s ease-in-out 0s;
+  -o-transition: opacity 1s ease-in-out 0s;
+  -webkit-transition: opacity 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition: opacity 1s ease-in-out 0s;
+  z-index: 1;
+}
+/* line 32, ../sass/result.scss */
+.voteSumWrap {
+  position: relative;
+  bottom: 0;
+  width: 20%;
+  display: inline-block;
+  vertical-align: bottom;
+}
+
+/* line 39, ../sass/result.scss */
+.voteNum {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/* line 46, ../sass/result.scss */
+.voteSum {
+  width: 15%;
+  margin: 0 auto;
+  height: 0;
+  padding-top: 1%;
+  background-color: blue;
+  -moz-transition: all 1s ease-in-out 0s;
+  -o-transition: all 1s ease-in-out 0s;
+  -webkit-transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition: all 1s ease-in-out 0s;
+}
+
+/* line 54, ../sass/result.scss */
+.singer {
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  font-size: 30px;
+  line-height: 30px;
+}
+
+/* line 64, ../sass/result.scss */
+.nameList {
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  -moz-transition: opacity 1s ease-in-out 0s;
+  -o-transition: opacity 1s ease-in-out 0s;
+  -webkit-transition: opacity 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+  transition: opacity 1s ease-in-out 0s;
+  z-index: 2;
+}
+/* line 68, ../sass/result.scss */
+.singerName {
+  width: 50%;
+  display: inline-block;
+  font-size: 50px;
+  text-align: center;
+  margin-bottom: 50px;
+}
