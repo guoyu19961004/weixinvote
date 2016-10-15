@@ -35,7 +35,7 @@ function showSinger(data, event) {
                 alert('请投票！');
                 event.target.checked = !event.target.checked;
             } else if (singerNumber > 3) {
-                alert('请选择不超过3个参赛者！');
+                alert('请选择3个参赛者！');
                 event.target.checked = !event.target.checked;
             }
         });
@@ -60,8 +60,10 @@ addEvent(voteSubmit, "click", function(event) {
     var singerNumber = document.querySelectorAll("input[name='singer']:checked").length;
     if (!singerNumber) {
         alert('请投票！');
+    } else if (singerNumber < 3) {
+        alert('请选择3个参赛者！');
     } else if (singerNumber > 3) {
-        alert('请选择不超过3个参赛者！');
+        alert('请选择3个参赛者！');
     } else {
         voteSubmit.disabled = true;
         getData("POST", "/vote", getFormQueryString("members"), function(event) {
@@ -72,7 +74,6 @@ addEvent(voteSubmit, "click", function(event) {
                         try {
                             window.location.replace('/static/html/voteSuccess.html');
                         } catch (err) {
-                            alert(err.message);
                             window.location.assign('/static/html/voteSuccess.html');
                         }
                     } else {
@@ -115,3 +116,22 @@ getData("POST", "/voteGet", '', function(event) {
     forbiddenEvent(event);
 });
 
+setInterval(function() {
+    getData("POST", "/voteClose", 'openId='+getCookie('openId'), function(event) {
+        if (xmlhttp.readyState == 4) {
+            if (xmlhttp.status == 200) {
+                var data = JSON.parse(xmlhttp.responseText);
+                if (!data.isVote) {
+                    try {
+                        window.location.replace("/static/html/voteSuccess.html");
+                    } catch (err) {
+                        window.location.assign("/static/html/voteSuccess.html");
+                    }
+                }
+            } else {
+                console.log("发生错误" + xmlhttp.status);
+            }
+        }
+        forbiddenEvent(event);
+    });
+}, 5000);

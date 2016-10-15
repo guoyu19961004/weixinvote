@@ -165,3 +165,17 @@ function is_weixin() {
 if (!is_weixin()) {
     window.location.replace='/templates/404.html';
 }
+
+
+
+/**
+ * 判断是否为空对象
+ * @param  {[type]}  obj [description]
+ * @return {Boolean}     [description]
+ */
+function isEmptyObject(obj) {
+  for (var key in obj) {
+    return false;
+  }
+  return true;
+}

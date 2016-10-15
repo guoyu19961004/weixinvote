@@ -1,62 +1,52 @@
 // var data = [{
-//     'sum': '1',
-//     'name': '李一'
+//     'score': 0,
+//     'judgeScore': 90,
+//     'name': '1_李一'
 // }, {
-//     'sum': '2',
-//     'name': '李二'
+//     'score': 40,
+//     'judgeScore': 90.6,
+//     'name': '2_李二'
 // }, {
-//     'sum': '3',
-//     'name': '李三'
+//     'score': 50,
+//     'judgeScore': 100,
+//     'name': '3_李三'
 // }, {
-//     'sum': '4',
-//     'name': '李四'
+//     'score': 20,
+//     'judgeScore': 95.5,
+//     'name': '4_李四'
 // }, {
-//     'sum': '5',
-//     'name': '李五'
-// }];
-// var singerData = [{
-//     'name': '李一'
-// }, {
-//     'name': '李二'
-// }, {
-//     'name': '李三'
-// }, {
-//     'name': '李四'
-// }, {
-//     'name': '李五'
-// },{
-//     'name': '李六'
-// },{
-//     'name': '李七'
+//     'score': 10,
+//     'judgeScore': 98.8,
+//     'name': '5_李五'
 // }];
 var votSumList = document.querySelectorAll('div.voteSum');
+var judgeScoreList = document.querySelectorAll('div.judgeScore');
+var allScoreList = document.querySelectorAll('p.allScore');
 var singerList = document.querySelectorAll('p.singer');
 var voteNumList = document.querySelectorAll('p.voteNum');
+var judegeNumList = document.querySelectorAll('p.judegeNum');
+var singerNumberList = document.querySelectorAll('span.singerNumber');
 
-function changeVotes(data) {
+function changeVotes(data, judgeFlag) {
     for (var i = 0; i < votSumList.length; i++) {
-        if (data[i].score === 0) {
-            console.log(data[i].score);
-            votSumList[i].style.paddingTop = '1%';
-        } else votSumList[i].style.paddingTop = data[i].score * 5 + '%';
-        singerList[i].innerText = data[i].name;
-        voteNumList[i].innerText = data[i].score;
+        if (!judgeFlag) {
+            if (data[i].score === 0) votSumList[i].style.paddingTop = '1%';
+            else votSumList[i].style.paddingTop = data[i].score * 3 + '%';
+            allScoreList[i].innerText = data[i].score;
+        } else {
+            if (data[i].score === 0) votSumList[i].style.paddingTop = '1%';
+            else votSumList[i].style.paddingTop = data[i].score + '%';
+            judgeScoreList[i].style.paddingTop = data[i].judgeScore + '%';
+            voteNumList[i].innerText = data[i].score;
+            judegeNumList[i].innerText = data[i].judgeScore;
+            allScoreList[i].innerText = data[i].score + data[i].judgeScore;
+        }
+        singerNumberList[i].innerText = data[i].name.split("_")[0];
+        singerList[i].innerText = data[i].name.split("_")[1];
     }
 }
 
-
-
-function showSinger(data) {
-    for (var i = 0; i < data.length; i++) {
-        var list = document.createElement('li');
-        list.className = "singerName";
-        list.innerText = data[i].name;
-        document.getElementById('nameList').appendChild(list);
-    }
-}
-
-//showSinger(singerData);
-//changeVotes(data);
+//changeVotes(data, 0);
 
 //动态获取名单
 setInterval(function() {
@@ -67,28 +57,23 @@ setInterval(function() {
                 switch (data.groupNumber) {
                     case 1:
                         document.getElementById('groupNumber').innerText = data.groupNumber;
-                        changeVotes(data.singers);
+                        changeVotes(data.singers, 0);
                         break;
                     case 2:
                         document.getElementById('groupNumber').innerText = data.groupNumber;
-                        changeVotes(data.singers);
+                        changeVotes(data.singers, 0);
                         break;
                     case 3:
                         document.getElementById('groupNumber').innerText = data.groupNumber;
-                        changeVotes(data.singers);
+                        changeVotes(data.singers, 0);
                         break;
                     case 4:
-        		document.getElementById('nameList').innerHTML="";
-                        document.getElementById('title').innerText = "总决赛名单";
-                        document.getElementById('nameList').style.opacity = 1;
-                        document.getElementById('showList').style.opacity = 0;
-                        showSinger(data.singers);
+                        document.getElementById('title').innerText = "总决赛选手得票情况";
+                        changeVotes(data.singers, 0);
                         break;
                     case 5:
-                        document.getElementById('title').innerText = "总决赛选手得票情况";
-                        document.getElementById('nameList').style.opacity = 0;
-                        document.getElementById('showList').style.opacity = 1;
-                        changeVotes(data.singers);
+                        document.getElementById('title').innerText = "总决赛选手得分情况";
+                        changeVotes(data.singers, 1);
                         break;
                     default:
                         break;

@@ -51,7 +51,6 @@ addEvent(checkSubmit, "click", function(event) {
                             try {
                                 window.location.replace('/static/html/voteSuccess.html');
                             } catch (err) {
-                                alert(err.message);
                                 window.location.assign('/static/html/voteSuccess.html');
                             }
 
@@ -59,7 +58,6 @@ addEvent(checkSubmit, "click", function(event) {
                             try {
                                 window.location.replace('/static/html/vote.html');
                             } catch (err) {
-                                alert(err.message);
                                 window.location.assign('/static/html/vote.html');
                             }
                         }

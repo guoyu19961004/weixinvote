@@ -63,26 +63,39 @@ article, aside, details, figcaption, figure, footer, header, hgroup, main, menu,
   display: block;
 }
 
-/* line 3, ../sass/result.scss */
+@font-face {
+  font-family: "shishangjianti";
+  src: url("/static/ttf/shishangjianti.ttf");
+}
+/* line 4, ../sass/result.scss */
 html {
   width: 100%;
   height: 100%;
-  font-family: "STHeiti Light", sans-serif;
+  font-family: "shishangjianti","SimHei", sans-serif;
 }
 
-/* line 9, ../sass/result.scss */
+/* line 10, ../sass/result.scss */
 body {
   position: relative;
   min-width: 960px;
   height: 100%;
   font-size: 0;
+  background-image: url("../images/background.jpg");
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+  background-size: cover;
 }
 
-/* line 15, ../sass/result.scss */
+/* line 19, ../sass/result.scss */
 h1 {
-  font-size: 50px;
+  position: absolute;
+  top: 32%;
+  left: 0;
+  width: 100%;
+  font-size: 36px;
+  color: #FDFBC9;
   text-align: center;
-  padding-top: 50px;
   -moz-transition: all 1s ease-in-out 0s;
   -o-transition: all 1s ease-in-out 0s;
   -webkit-transition: all 1s ease-in-out;
@@ -90,19 +103,16 @@ h1 {
   transition: all 1s ease-in-out 0s;
 }
 
-/* line 21, ../sass/result.scss */
+/* line 30, ../sass/result.scss */
 .wrap {
   position: absolute;
   left: 0;
-  bottom: 20%;
+  bottom: 20px;
   width: 100%;
-  padding-top: 50px;
 }
 
-/* line 28, ../sass/result.scss */
+/* line 37, ../sass/result.scss */
 .showList {
-  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
-  opacity: 1;
   -moz-transition: opacity 1s ease-in-out 0s;
   -o-transition: opacity 1s ease-in-out 0s;
   -webkit-transition: opacity 1s ease-in-out;
@@ -110,7 +120,7 @@ h1 {
   transition: opacity 1s ease-in-out 0s;
   z-index: 1;
 }
-/* line 32, ../sass/result.scss */
+/* line 40, ../sass/result.scss */
 .voteSumWrap {
   position: relative;
   bottom: 0;
@@ -119,22 +129,28 @@ h1 {
   vertical-align: bottom;
 }
 
-/* line 39, ../sass/result.scss */
-.voteNum {
+/* line 47, ../sass/result.scss */
+.relative-font {
   width: 100%;
+  color: #fff;
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 30px;
-  line-height: 30px;
+  font-size: 36px;
+  line-height: 40px;
 }
 
-/* line 46, ../sass/result.scss */
-.voteSum {
-  width: 15%;
+/* line 54, ../sass/result.scss */
+.allScore {
+  margin-bottom: 10px;
+}
+
+/* line 57, ../sass/result.scss */
+.data {
+  position: relative;
+  width: 80px;
   margin: 0 auto;
   height: 0;
   padding-top: 1%;
-  background-color: blue;
+  background-color: #FFA500;
   -moz-transition: all 1s ease-in-out 0s;
   -o-transition: all 1s ease-in-out 0s;
   -webkit-transition: all 1s ease-in-out;
@@ -142,31 +158,45 @@ h1 {
   transition: all 1s ease-in-out 0s;
 }
 
-/* line 54, ../sass/result.scss */
-.singer {
-  width: 100%;
-  text-align: center;
-  margin-top: 20px;
-  font-size: 30px;
-  line-height: 30px;
+/* line 66, ../sass/result.scss */
+.judgeScore {
+  padding-top: 0;
+  background-color: #FF0000;
 }
 
-/* line 64, ../sass/result.scss */
-.nameList {
-  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
-  opacity: 0;
-  -moz-transition: opacity 1s ease-in-out 0s;
-  -o-transition: opacity 1s ease-in-out 0s;
-  -webkit-transition: opacity 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-  transition: opacity 1s ease-in-out 0s;
-  z-index: 2;
-}
-/* line 68, ../sass/result.scss */
-.singerName {
-  width: 50%;
-  display: inline-block;
-  font-size: 50px;
+/* line 70, ../sass/result.scss */
+.position-font {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  color: #fff;
   text-align: center;
-  margin-bottom: 50px;
+  font-size: 36px;
+  line-height: 40px;
+  -moz-transform: translate(0, -50%);
+  -ms-transform: translate(0, -50%);
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+}
+
+/* line 81, ../sass/result.scss */
+.singerNumber {
+  position: absolute;
+  left: 25%;
+  bottom: 30px;
+  width: 40px;
+  color: #fff;
+  font-size: 30px;
+  line-height: 40px;
+  text-align: center;
+  background-color: #FFA500;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+}
+
+/* line 93, ../sass/result.scss */
+.singer {
+  margin-top: 10px;
 }
