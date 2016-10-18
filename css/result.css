@@ -80,7 +80,7 @@ body {
   min-width: 960px;
   height: 100%;
   font-size: 0;
-  background-image: url("../images/background.jpg");
+  background: url("/static/images/background.jpg") center;
   -moz-background-size: cover;
   -o-background-size: cover;
   -webkit-background-size: cover;
@@ -88,12 +88,17 @@ body {
 }
 
 /* line 19, ../sass/result.scss */
-h1 {
+.title {
   position: absolute;
-  top: 32%;
+  top: 23%;
   left: 0;
   width: 100%;
-  font-size: 36px;
+}
+
+/* line 25, ../sass/result.scss */
+h1 {
+  width: 100%;
+  font-size: 50px;
   color: #FDFBC9;
   text-align: center;
   -moz-transition: all 1s ease-in-out 0s;
@@ -103,7 +108,7 @@ h1 {
   transition: all 1s ease-in-out 0s;
 }
 
-/* line 30, ../sass/result.scss */
+/* line 33, ../sass/result.scss */
 .wrap {
   position: absolute;
   left: 0;
@@ -111,7 +116,7 @@ h1 {
   width: 100%;
 }
 
-/* line 37, ../sass/result.scss */
+/* line 40, ../sass/result.scss */
 .showList {
   -moz-transition: opacity 1s ease-in-out 0s;
   -o-transition: opacity 1s ease-in-out 0s;
@@ -120,7 +125,7 @@ h1 {
   transition: opacity 1s ease-in-out 0s;
   z-index: 1;
 }
-/* line 40, ../sass/result.scss */
+/* line 43, ../sass/result.scss */
 .voteSumWrap {
   position: relative;
   bottom: 0;
@@ -129,28 +134,27 @@ h1 {
   vertical-align: bottom;
 }
 
-/* line 47, ../sass/result.scss */
+/* line 50, ../sass/result.scss */
 .relative-font {
   width: 100%;
   color: #fff;
   text-align: center;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 45px;
 }
 
-/* line 54, ../sass/result.scss */
+/* line 56, ../sass/result.scss */
 .allScore {
   margin-bottom: 10px;
 }
 
-/* line 57, ../sass/result.scss */
+/* line 59, ../sass/result.scss */
 .data {
   position: relative;
-  width: 80px;
+  width: 120px;
   margin: 0 auto;
   height: 0;
   padding-top: 1%;
-  background-color: #FFA500;
+  background-color: #FFC811;
   -moz-transition: all 1s ease-in-out 0s;
   -o-transition: all 1s ease-in-out 0s;
   -webkit-transition: all 1s ease-in-out;
@@ -158,13 +162,13 @@ h1 {
   transition: all 1s ease-in-out 0s;
 }
 
-/* line 66, ../sass/result.scss */
+/* line 68, ../sass/result.scss */
 .judgeScore {
   padding-top: 0;
-  background-color: #FF0000;
+  background-color: #ff8d00;
 }
 
-/* line 70, ../sass/result.scss */
+/* line 72, ../sass/result.scss */
 .position-font {
   position: absolute;
   top: 50%;
@@ -172,31 +176,31 @@ h1 {
   width: 100%;
   color: #fff;
   text-align: center;
-  font-size: 36px;
-  line-height: 40px;
+  font-size: 45px;
   -moz-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
 }
 
-/* line 81, ../sass/result.scss */
+/* line 82, ../sass/result.scss */
 .singerNumber {
   position: absolute;
-  left: 25%;
-  bottom: 30px;
-  width: 40px;
+  left: 18%;
+  bottom: 35px;
+  width: 50px;
   color: #fff;
-  font-size: 30px;
-  line-height: 40px;
+  font-size: 40px;
+  line-height: 50px;
   text-align: center;
-  background-color: #FFA500;
+  background-color: #FFC811;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
+  text-shadow: 3px 3px 5px #000;
 }
 
-/* line 93, ../sass/result.scss */
+/* line 95, ../sass/result.scss */
 .singer {
   margin-top: 10px;
 }

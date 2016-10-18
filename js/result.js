@@ -68,11 +68,11 @@ setInterval(function() {
                         changeVotes(data.singers, 0);
                         break;
                     case 4:
-                        document.getElementById('title').innerText = "总决赛选手得票情况";
+                        document.getElementById('title').innerText = "总决赛选手得票";
                         changeVotes(data.singers, 0);
                         break;
                     case 5:
-                        document.getElementById('title').innerText = "总决赛选手得分情况";
+                        document.getElementById('title').innerText = "总决赛选手得分";
                         changeVotes(data.singers, 1);
                         break;
                     default:

@@ -1,5 +1,6 @@
 var voteSubmit = document.getElementById('voteSubmit');
 document.forms.members[0].value = getCookie('openId');
+var lastVote=false;
 // var singerData = [{
 //     'id': '01',
 //     'name': '1_李一'
@@ -18,7 +19,7 @@ document.forms.members[0].value = getCookie('openId');
 // }];
 // showSinger(singerData);
 
-function showSinger(data, event) {
+function showSinger(data,event) {
     var docFrag = document.createDocumentFragment();
     for (var i = 0; i < data.length; i++) {
         var label = document.createElement('label');
@@ -34,8 +35,10 @@ function showSinger(data, event) {
             if (!singerNumber) {
                 alert('请投票！');
                 event.target.checked = !event.target.checked;
-            } else if (singerNumber > 3) {
-                alert('请选择3个参赛者！');
+            } else if(lastVote && singerNumber > 2) {
+                alert('请只选择1个选手！');
+            }else if (!lastVote && singerNumber > 3) {
+                alert('请选择3个选手！');
                 event.target.checked = !event.target.checked;
             }
         });
@@ -60,10 +63,10 @@ addEvent(voteSubmit, "click", function(event) {
     var singerNumber = document.querySelectorAll("input[name='singer']:checked").length;
     if (!singerNumber) {
         alert('请投票！');
-    } else if (singerNumber < 3) {
-        alert('请选择3个参赛者！');
-    } else if (singerNumber > 3) {
-        alert('请选择3个参赛者！');
+    } else if (!lastVote && singerNumber != 3) {
+        alert('请选择3个选手！');
+    } else if (lastVote && singerNumber != 1) {
+        alert('请选择1个选手！');
     } else {
         voteSubmit.disabled = true;
         getData("POST", "/vote", getFormQueryString("members"), function(event) {
@@ -92,7 +95,6 @@ getData("POST", "/voteGet", '', function(event) {
     if (xmlhttp.readyState == 4) {
         if (xmlhttp.status == 200) {
             var data = JSON.parse(xmlhttp.responseText);
-            showSinger(data.singers);
             switch (data.groupNumber) {
                 case 1:
                     document.getElementById('voteTime').innerText = "第1轮";
@@ -105,10 +107,13 @@ getData("POST", "/voteGet", '', function(event) {
                     break;
                 case 4:
                     document.getElementById('voteTime').innerText = "总决赛";
+                    document.getElementById('intr').innerText = "只投1人";
+                    lastVote = true;
                     break;
                 default:
                     break;
             }
+            showSinger(data.singers);
         } else {
             console.log("发生错误" + xmlhttp.status);
         }
