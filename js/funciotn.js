@@ -162,9 +162,7 @@ function is_weixin() {
         return false;
     }
 }
-if (!is_weixin()) {
-    window.location.replace('/static/html/404.html');
-}
+
 
 
 

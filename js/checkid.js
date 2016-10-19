@@ -1,3 +1,6 @@
+if (!is_weixin()) {
+    window.location.replace('/static/html/404.html');
+}
 //document.location.assign('https://developer.mozilla.org/en-US/docs/Web/API/Location.reload');
 var checkError = document.getElementById('check-error');
 var checkSubmit = document.getElementById('checkIdSubmit');

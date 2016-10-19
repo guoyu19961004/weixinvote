@@ -1,3 +1,6 @@
+if (!is_weixin()) {
+    window.location.replace('/static/html/404.html');
+}
 var voteSubmit = document.getElementById('voteSubmit');
 document.forms.members[0].value = getCookie('openId');
 var lastVote=false;
