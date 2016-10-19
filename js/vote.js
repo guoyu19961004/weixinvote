@@ -9,13 +9,13 @@ var lastVote=false;
 //     'name': '22_李二'
 // }, {
 //     'id': '03',
-//     'name': '333_李三'
+//     'name': '33_李三'
 // }, {
 //     'id': '04',
-//     'name': '4444_李四'
+//     'name': '44_李四'
 // }, {
 //     'id': '05',
-//     'name': '55555_李五'
+//     'name': '15_李五'
 // }];
 // showSinger(singerData);
 
@@ -32,10 +32,7 @@ function showSinger(data,event) {
         label.appendChild(input);
         addEvent(input, "click", function(event) {
             var singerNumber = document.querySelectorAll("input[name='singer']:checked").length;
-            if (!singerNumber) {
-                alert('请投票！');
-                event.target.checked = !event.target.checked;
-            } else if(lastVote && singerNumber > 2) {
+            if(lastVote && singerNumber > 1) {
                 alert('请只选择1个选手！');
             }else if (!lastVote && singerNumber > 3) {
                 alert('请选择3个选手！');

@@ -163,7 +163,7 @@ function is_weixin() {
     }
 }
 if (!is_weixin()) {
-    window.location.replace='/templates/404.html';
+    window.location.replace('/static/html/404.html');
 }
 
 

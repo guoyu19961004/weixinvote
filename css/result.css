@@ -146,7 +146,9 @@ h1 {
 .allScore {
   margin-bottom: 10px;
 }
-
+.voteNum{
+  z-index:2;
+}
 /* line 59, ../sass/result.scss */
 .data {
   position: relative;
@@ -186,21 +188,26 @@ h1 {
 /* line 82, ../sass/result.scss */
 .singerNumber {
   position: absolute;
-  left: 18%;
-  bottom: 35px;
-  width: 50px;
+  left: 50%;
+  bottom: 50px;
+  width: 70px;
   color: #fff;
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 60px;
+  line-height: 70px;
   text-align: center;
-  background-color: #FFC811;
+  background-color: #09c;
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
   text-shadow: 3px 3px 5px #000;
+  -moz-transform: translate(-150px, 0);
+  -ms-transform: translate(-150px, 0);
+  -webkit-transform: translate(-150px, 0);
+  transform: translate(-150px, 0);
 }
 
 /* line 95, ../sass/result.scss */
 .singer {
   margin-top: 10px;
+  height:45px;
 }
